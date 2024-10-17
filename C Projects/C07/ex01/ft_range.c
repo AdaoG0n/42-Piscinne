@@ -31,71 +31,72 @@ ________________________________________________________________________________
 Explanation
 
 Include Directive:
-#include <stdlib.h>: Esta linha inclui o arquivo de cabeçalho <stdlib.h>, que é necessário para usar funções de 
-alocação de memória, como malloc().
+#include <stdlib.h>: This line includes the <stdlib.h> header file, which is necessary for memory allocation functions 
+like malloc().
 
 Function Declaration:
-int *ft_range(int min, int max): Esta linha declara a função ft_range, que recebe dois argumentos inteiros, min e max. 
-	A função retorna um ponteiro para um array de inteiros.
+int *ft_range(int min, int max): This line declares a function named ft_range that takes two integer arguments (min and max) 
+and returns a pointer to an integer array.
 
-Check for Invalid Range:
-if (min >= max): Esta linha verifica se o valor de min é maior ou igual a max.
-return (0);: Se esta condição for verdadeira, a função retorna 0, indicando que não há intervalo válido.
+Return Condition for Invalid Range:
+if (min >= max): This condition checks if min is greater than or equal to max. If true, the function returns 0, indicating 
+that no range can be created.
 
-Calculate Size:
-i = max - min;: Esta linha calcula o tamanho do array resultante que será alocado, que é a diferença entre max e min.
+Calculate the Size of the Resulting Array:
+i = max - min;: This line calculates the size of the array that needs to be allocated by subtracting min from max.
 
 Memory Allocation:
-result = (int *)malloc(sizeof(int) * (i));: Esta linha aloca memória suficiente para um array de inteiros do tamanho i 
-	(max - min). O resultado de malloc() é convertido para um ponteiro de inteiro.
+result = (int *)malloc(sizeof(int) * (i));: This line allocates memory for an integer array of size i. If the allocation 
+fails, it returns NULL.
 
-Null Check:
-if (result == NULL): Esta linha verifica se a alocação de memória foi bem-sucedida.
-return (NULL);: Se result for NULL, a função retorna NULL para indicar uma falha na alocação de memória.
+Check for Successful Allocation:
+if (result == NULL): This condition checks if the memory allocation was successful. If not, the function returns NULL.
 
-Fill the Array:
-i = 0;: Esta linha inicializa o índice i como 0.
-while (max > min): Este loop continua enquanto max for maior que min.
-result[i] = min;: Dentro do loop, o valor de min é atribuído à posição atual do array result.
-min++;: O valor de min é incrementado.
-i++;: O índice i é incrementado para passar para a próxima posição do array.
+Initialize Index for Filling Array:
+i = 0;: This line initializes the index variable i to 0 for filling the array.
 
-Return Statement:
-return (result);: Finalmente, a função retorna o ponteiro para o array result preenchido com os valores de min até max - 1.
+Fill the Array with Values from min to max:
+while (max > min): This loop continues while max is greater than min.
+result[i] = min;: This line assigns the current value of min to the result array at index i.
+min++;: This line increments min to the next value.
+i++;: This line increments the index i to move to the next position in the result array.
 
-	
-	
-	Português:
+Return the Resulting Array:
+return (result);: Finally, the function returns the pointer to the newly created array containing the range of values.
+
+
+	Português
 
 Diretiva de Inclusão:
-#include <stdlib.h>: Esta linha inclui o arquivo de cabeçalho <stdlib.h>, que é necessário para usar funções de alocação 
-de memória, como malloc().
+#include <stdlib.h>: Esta linha inclui o arquivo de cabeçalho <stdlib.h>, que é necessário para funções de alocação de 
+memória, como malloc().
 
 Declaração da Função:
-int *ft_range(int min, int max): Esta linha declara a função ft_range, que recebe dois argumentos inteiros, min e max. 
-	A função retorna um ponteiro para um array de inteiros.
+int *ft_range(int min, int max): Esta linha declara uma função chamada ft_range que recebe dois argumentos inteiros 
+(min e max) e retorna um ponteiro para um array de inteiros.
 
-Verificação de Intervalo Inválido:
-if (min >= max): Esta linha verifica se o valor de min é maior ou igual a max.
-return (0);: Se esta condição for verdadeira, a função retorna 0, indicando que não há intervalo válido.
+Condição de Retorno para Intervalo Inválido:
+if (min >= max): Esta condição verifica se min é maior ou igual a max. Se verdadeiro, a função retorna 0, indicando que 
+nenhum intervalo pode ser criado.
 
-Cálculo do Tamanho:
-i = max - min;: Esta linha calcula o tamanho do array resultante que será alocado, que é a diferença entre max e min.
+Calcular o Tamanho do Array Resultante:
+i = max - min;: Esta linha calcula o tamanho do array que precisa ser alocado subtraindo min de max.
 
 Alocação de Memória:
-result = (int *)malloc(sizeof(int) * (i));: Esta linha aloca memória suficiente para um array de inteiros do tamanho i 
-	(max - min). O resultado de malloc() é convertido para um ponteiro de inteiro.
+result = (int *)malloc(sizeof(int) * (i));: Esta linha aloca memória para um array de inteiros de tamanho i. Se a alocação 
+falhar, retorna NULL.
 
-Verificação de Nulo:
-if (result == NULL): Esta linha verifica se a alocação de memória foi bem-sucedida.
-return (NULL);: Se result for NULL, a função retorna NULL para indicar uma falha na alocação de memória.
+Verificar a Alocação Bem-Sucedida:
+if (result == NULL): Esta condição verifica se a alocação de memória foi bem-sucedida. Se não, a função retorna NULL.
 
-Preenchimento do Array:
-i = 0;: Esta linha inicializa o índice i como 0.
+Inicializar Índice para Preencher o Array:
+i = 0;: Esta linha inicializa a variável de índice i como 0 para preencher o array.
+
+Preencher o Array com Valores de min a max:
 while (max > min): Este loop continua enquanto max for maior que min.
-result[i] = min;: Dentro do loop, o valor de min é atribuído à posição atual do array result.
-min++;: O valor de min é incrementado.
-i++;: O índice i é incrementado para passar para a próxima posição do array.
+result[i] = min;: Esta linha atribui o valor atual de min ao array result na posição de índice i.
+min++;: Esta linha incrementa min para o próximo valor.
+i++;: Esta linha incrementa o índice i para passar para a próxima posição no array result.
 
-Instrução de Retorno:
-return (result);: Finalmente, a função retorna o ponteiro para o array result preenchido com os valores de min até max - 1.
+Retornar o Array Resultante:
+return (result);: Por fim, a função retorna o ponteiro para o novo array criado contendo o intervalo de valores.
