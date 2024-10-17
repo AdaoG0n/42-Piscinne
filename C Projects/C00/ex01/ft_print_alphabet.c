@@ -15,7 +15,7 @@ void	ft_print_alphabet(void)
 
 --- Explanation ---
 	
-	English:
+English:
 
     #include <unistd.h>: //Includes the library to use the write() function.
     
@@ -31,7 +31,10 @@ void	ft_print_alphabet(void)
     
     count++: //Increments count to move to the next character.
 	
-	Português:
+	
+
+
+Português:
 
     #include <unistd.h>: //Inclui a biblioteca para usar a função write().
    
