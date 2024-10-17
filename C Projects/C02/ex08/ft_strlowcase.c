@@ -16,6 +16,7 @@ char	*ft_strlowcase(char *str)
 
 
 
+_______________________________________________________________________________________________
 --- Explanation ---
 
     Function Declaration:
