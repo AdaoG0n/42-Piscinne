@@ -13,36 +13,62 @@ void	ft_print_reverse_alphabet(void)
 
 --- Explanation ---
 
-English:
+    Include Directive:
+        #include <unistd.h>: This line includes the <unistd.h> header file, which is necessary for using the write() function. 
+	This function enables the program to write data to file descriptors, including standard output.
 
-    #include <unistd.h>: //Includes the library to use the write() function.
+    Function Declaration:
+        void ft_print_reverse_alphabet(void): This line declares a function named ft_print_reverse_alphabet. The function does 
+	not take any arguments and does not return any value (void).
 
-    void ft_print_reverse_alphabet(void): //Declares the ft_print_reverse_alphabet function, which takes no arguments and 
-					  //returns no values (void).
+    Variable Declaration:
+        int count;: This line declares an integer variable named count. This variable will be used to control the loop and 
+	represent the ASCII values of characters.
 
-    int count;: //Declares a variable count to store the current character's ASCII value.
+    Initializing Count:
+        count = 123;: This line initializes the variable count with the value 123, which is just above the ASCII value of 'z' (122).
+	This initialization will allow the loop to start counting down from this value.
 
-    count = 123;: //Initializes count with the value 123, which is one greater than 'z' (ASCII 122).
+    While Loop:
+        while (count-- >= 98): This line starts a loop that will execute as long as count is greater than or equal to 98. 
+	The count-- operation decrements count after evaluating the condition. The loop continues until count reaches 98, 
+	which corresponds to the ASCII value of 'b'.
 
-    while (count-- >= 98): //Starts a loop that continues while count is greater than or equal to 98 (which corresponds to 'b') 
-	    	    	   //and decrements count after each iteration.
+    Writing the Character:
+        write(1, &count, 1);: Inside the loop, this line uses the write() function to output the current value of count. 
+	However, the count variable currently holds integer values that represent the ASCII codes. 
+	This means that it will write the characters corresponding to these ASCII values:
+            For example, when count is 122, it writes 'z', and when count is 121, it writes 'y', and so on.
 
-    write(1, &count, 1);: //Uses the write() function to send the current character stored in count to the terminal (standard output).
 
 
 
+	
 Português:
 
-    #include <unistd.h>: //Inclui a biblioteca para usar a função write().
+    Diretiva de Inclusão:
+        #include <unistd.h>: Esta linha inclui o arquivo de cabeçalho <unistd.h>, que é necessário para usar a função write(). 
+	Esta função permite que o programa escreva dados em descritores de arquivos, incluindo a saída padrão.
 
-    void ft_print_reverse_alphabet(void): //Declaração da função ft_print_reverse_alphabet, que não recebe argumentos e 
-					  //não retorna valores (void).
+    Declaração da Função:
+        void ft_print_reverse_alphabet(void): Esta linha declara uma função chamada ft_print_reverse_alphabet. 
+	A função não aceita argumentos e não retorna nenhum valor (void).
 
-    int count;: //Declara uma variável count para armazenar o valor ASCII do caractere atual.
+    Declaração da Variável:
+        int count;: Esta linha declara uma variável inteira chamada count. Esta variável será usada para controlar o loop e 
+	representar os valores ASCII dos caracteres.
 
-    count = 123;: //Inicializa count com o valor 123, que é um a mais do que 'z' (ASCII 122).
+    Inicializando Count:
+        count = 123;: Esta linha inicializa a variável count com o valor 123, que está logo acima do valor ASCII de 'z' (122). 
+	Esta inicialização permitirá que o loop comece a contagem regressiva a partir desse valor.
 
-    while (count-- >= 98): //Inicia um loop que continua enquanto count for maior ou igual a 98 (correspondente a 'b') e 
-	    		   //decrementa count após cada iteração.
+    Laço While:
+        while (count-- >= 98): Esta linha inicia um loop que será executado enquanto count for maior ou igual a 98. 
+	A operação count-- decrementa count após avaliar a condição. O loop continua até que count chegue a 98, que corresponde 
+	ao valor ASCII de 'b'.
 
-    write(1, &count, 1);: //Usa a função write() para enviar o caractere atual armazenado em count para o terminal (saída padrão).
+    Escrevendo o Caractere:
+        write(1, &count, 1);: Dentro do loop, esta linha usa a função write() para enviar o valor atual de count. No entanto, a 
+	variável count atualmente contém valores inteiros que representam os códigos ASCII. Isso significa que ele escreverá os 
+	caracteres correspondentes a esses valores ASCII:
+            Por exemplo, quando count é 122, ele escreve 'z', e quando count é 121, ele escreve 'y', e assim por diante.
