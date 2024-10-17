@@ -15,6 +15,8 @@ void	ft_rev_int_tab(int *tab, int size)
 
 
 
+
+_______________________________________________________________________________________________
 --- Explanation ---
 
     Function Declaration:
