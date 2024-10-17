@@ -34,84 +34,80 @@ ________________________________________________________________________________
 Explanation
 
 Include Directives:
-#include <stdlib.h>: Esta linha inclui o arquivo de cabeçalho <stdlib.h>, que é necessário para usar funções 
-de alocação de memória como malloc().
-#include <string.h>: Esta linha inclui o arquivo de cabeçalho <string.h>, que fornece funções para manipulação 
-de strings.
-#include <stdio.h>: Esta linha inclui o arquivo de cabeçalho <stdio.h>, que permite o uso de funções de entrada 
-e saída, como printf().
+#include <stdlib.h>: This line includes the <stdlib.h> header file, necessary for memory allocation functions like malloc().
+#include <string.h>: This line includes the <string.h> header file, which is necessary for string handling functions, 
+though it is not directly used in this function.
+#include <stdio.h>: This line includes the <stdio.h> header file, which is often used for input/output functions, though 
+it is not directly utilized in this function.
 
 Function Declaration:
-char *ft_strdup(char *src): Esta linha declara a função ft_strdup, que recebe um único argumento, src, um ponteiro 
-para a string fonte. A função retorna um ponteiro para uma nova string que é uma duplicata da string de entrada.
+char *ft_strdup(char *src): This line declares a function named ft_strdup that takes a string (character pointer) as an 
+argument and returns a pointer to a newly allocated string.
 
-Length Calculation:
-len = 0;: Esta linha inicializa len como 0.
-while (src[len] != '\0'): Este loop calcula o comprimento da string fonte src, iterando através dela até alcançar o 
-terminador nulo ('\0').
-len++;: Dentro do loop, incrementa len até que todos os caracteres tenham sido contados.
+Initialize Length Counter:
+int len = 0;: This line initializes a variable len to 0 to count the length of the input string src.
 
-Memory Allocation:
-dest = (char *)malloc(sizeof(char) * (len + 1));: Esta linha aloca memória para a nova string dest. Ela aloca espaço 
-suficiente para todos os caracteres em src, além de um byte adicional para o terminador nulo. O valor retornado por 
-malloc() é convertido para um ponteiro de caractere.
+Calculate Length of the Source String:
+while (src[len] != '\0'): This loop increments len until it reaches the null terminator of the string, effectively 
+calculating the length of src.
 
-Null Check:
-if (dest == NULL): Esta linha verifica se a alocação de memória foi bem-sucedida.
-return (NULL);: Se dest for NULL, a função retorna NULL para indicar uma falha na alocação.
+Allocate Memory for the Duplicate String:
+dest = (char *)malloc(sizeof(char) * (len + 1));: This line allocates memory for the new string, which requires len 
+characters plus one additional byte for the null terminator.
 
-String Copying:
-i = 0;: Esta linha inicializa o índice i como 0.
-while (src[i] != '\0'): Este loop copia os caracteres de src para dest um a um, até que o terminador nulo seja alcançado.
-dest[i] = src[i];: Dentro do loop, o caractere atual de src é copiado para dest.
-i++;: O índice i é incrementado para mover para o próximo caractere.
+Check for Successful Memory Allocation:
+if (dest == NULL): This condition checks if the memory allocation was successful. If it fails, the function returns NULL.
 
-Null Termination of Destination String:
-dest[i] = '\0';: Após copiar todos os caracteres, esta linha adiciona o terminador nulo ao final da nova string dest, 
-garantindo que seja uma string válida em C.
+Copy Source String to Destination:
+i = 0;: This line initializes an index variable i to 0 for copying the characters from src to dest.
+while (src[i] != '\0'): This loop continues until the null terminator of src is reached.
+dest[i] = src[i];: This line copies the character from src to dest at the same index.
+i++;: This line increments the index i to move to the next character.
 
-Return Statement:
-return (dest);: Finalmente, a função retorna o ponteiro para a nova string alocada e copiada, dest.
+Add Null Terminator to the Duplicate String:
+dest[i] = '\0';: After the loop, this line adds a null terminator to the end of the dest string to properly terminate it.
+
+Return the Duplicate String:
+return (dest);: Finally, the function returns a pointer to the newly created duplicate string.
 
 	
 	
-	Português:
+	Português
 
 Diretivas de Inclusão:
-#include <stdlib.h>: Esta linha inclui o arquivo de cabeçalho <stdlib.h>, que é necessário para usar funções de alocação 
-de memória como malloc().
-#include <string.h>: Esta linha inclui o arquivo de cabeçalho <string.h>, que fornece funções para manipulação de strings.
-#include <stdio.h>: Esta linha inclui o arquivo de cabeçalho <stdio.h>, que permite o uso de funções de entrada e saída, 
-como printf().
+#include <stdlib.h>: Esta linha inclui o arquivo de cabeçalho <stdlib.h>, que é necessário para funções de alocação de 
+memória, como malloc().
+#include <string.h>: Esta linha inclui o arquivo de cabeçalho <string.h>, que é necessário para funções de manipulação de 
+strings, embora não seja utilizado diretamente nesta função.
+#include <stdio.h>: Esta linha inclui o arquivo de cabeçalho <stdio.h>, que é frequentemente usado para funções de 
+entrada/saída, embora não seja utilizado diretamente nesta função.
 
 Declaração da Função:
-char *ft_strdup(char *src): Esta linha declara a função ft_strdup, que recebe um único argumento, src, um ponteiro para a 
-string fonte. A função retorna um ponteiro para uma nova string que é uma duplicata da string de entrada.
+char *ft_strdup(char *src): Esta linha declara uma função chamada ft_strdup que recebe uma string (ponteiro para caractere) 
+como argumento e retorna um ponteiro para uma nova string alocada.
 
-Cálculo do Comprimento:
-len = 0;: Esta linha inicializa len como 0.
-while (src[len] != '\0'): Este loop calcula o comprimento da string fonte src, iterando através dela até alcançar o 
-terminador nulo ('\0').
-len++;: Dentro do loop, incrementa len até que todos os caracteres tenham sido contados.
+Inicializar Contador de Comprimento:
+int len = 0;: Esta linha inicializa uma variável len como 0 para contar o comprimento da string de entrada src.
 
-Alocação de Memória:
-dest = (char *)malloc(sizeof(char) * (len + 1));: Esta linha aloca memória para a nova string dest. Ela aloca espaço 
-suficiente para todos os caracteres em src, além de um byte adicional para o terminador nulo. O valor retornado por malloc()
-é convertido para um ponteiro de caractere.
+Calcular o Comprimento da String Fonte:
+while (src[len] != '\0'): Este loop incrementa len até alcançar o terminador nulo da string, calculando efetivamente o 
+comprimento de src.
 
-Verificação de Nulo:
-if (dest == NULL): Esta linha verifica se a alocação de memória foi bem-sucedida.
-return (NULL);: Se dest for NULL, a função retorna NULL para indicar uma falha na alocação.
+Alocar Memória para a String Duplicada:
+dest = (char *)malloc(sizeof(char) * (len + 1));: Esta linha aloca memória para a nova string, que requer len caracteres 
+mais um byte adicional para o terminador nulo.
 
-Cópia da String:
-i = 0;: Esta linha inicializa o índice i como 0.
-while (src[i] != '\0'): Este loop copia os caracteres de src para dest um a um, até que o terminador nulo seja alcançado.
-dest[i] = src[i];: Dentro do loop, o caractere atual de src é copiado para dest.
-i++;: O índice i é incrementado para mover para o próximo caractere.
+Verificar a Alocação de Memória Bem-Sucedida:
+if (dest == NULL): Esta condição verifica se a alocação de memória foi bem-sucedida. Se falhar, a função retorna NULL.
 
-Terminação Nula da String de Destino:
-dest[i] = '\0';: Após copiar todos os caracteres, esta linha adiciona o terminador nulo ao final da nova string dest, 
-garantindo que seja uma string válida em C.
+Copiar a String Fonte para a Destino:
+i = 0;: Esta linha inicializa uma variável de índice i como 0 para copiar os caracteres de src para dest.
+while (src[i] != '\0'): Este loop continua até que o terminador nulo de src seja alcançado.
+dest[i] = src[i];: Esta linha copia o caractere de src para dest no mesmo índice.
+i++;: Esta linha incrementa o índice i para passar para o próximo caractere.
 
-Instrução de Retorno:
-return (dest);: Finalmente, a função retorna o ponteiro para a nova string alocada e copiada, dest.
+Adicionar Terminador Nulo à String Duplicada:
+dest[i] = '\0';: Após o loop, esta linha adiciona um terminador nulo ao final da string dest para terminá-la corretamente.
+
+Retornar a String Duplicada:
+return (dest);: Por fim, a função retorna um ponteiro para a nova string duplicada criada.
