@@ -27,6 +27,8 @@ char	*ft_strcapitalize(char *str)
 }
 
 
+
+_______________________________________________________________________________________________
 --- Explanation ---
 
 Function Declaration:
