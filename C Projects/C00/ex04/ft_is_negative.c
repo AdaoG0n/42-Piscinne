@@ -16,34 +16,55 @@ void	ft_is_negative(int n)
 
 --- Explanation ---
 
-English:
+    Include Directive:
+        Although not explicitly included here, it's typically assumed that the required headers such as <unistd.h> are 
+	included in a complete program. This header is necessary for using the write() function.
 
-    #include <unistd.h>: //Includes the library to use the write() function.
+    Function Declaration:
+        void ft_is_negative(int n): This line declares a function named ft_is_negative. It takes one argument, 
+	an integer n, and does not return any value (void).
 
-    void ft_is_negative(int n): //Declares the ft_is_negative function, which takes an integer n as an argument and 
-				//returns no values (void).
+    Conditional Check for Negative:
+        if (n < 0): This line checks if the value of n is less than zero. If this condition is true, the block of 
+	code inside the braces will execute.
 
-    if (n < 0): //Checks if the value of n is negative.
+    Writing "N":
+        write(1, "N", 1);: If n is negative, this line uses the write() function to output the character 'N'. 
+	The 1 indicates that only one byte (the character 'N') will be written to the standard output (file descriptor 1).
 
-    write(1, "N", 1);: //If n is negative, uses the write() function to send the character 'N' to the terminal (standard output).
+    Conditional Check for Non-Negative:
+        if (n >= 0): This line checks if the value of n is greater than or equal to zero. If this condition is true, 
+	the block of code inside the braces will execute.
 
-    if (n >= 0): //Checks if the value of n is zero or positive.
+    Writing "P":
+        write(1, "P", 1);: If n is non-negative (zero or positive), this line uses the write() function to output 
+	the character 'P'. Similarly, the 1 indicates that one byte (the character 'P') will be written to the standard output.
 
-    write(1, "P", 1);: //If n is zero or positive, uses the write() function to send the character 'P' to the terminal (standard output).
 
 
 
 Português:
 
-    #include <unistd.h>: //Inclui a biblioteca para usar a função write().
+    Diretiva de Inclusão:
+        Embora não esteja explicitamente incluída aqui, normalmente se assume que os cabeçalhos necessários, como <unistd.h>, 
+	estão incluídos em um programa completo. Este cabeçalho é necessário para usar a função write().
 
-    void ft_is_negative(int n): //Declaração da função ft_is_negative, que aceita um inteiro n como argumento e não 
-				//retorna valores (void).
+    Declaração da Função:
+        void ft_is_negative(int n): Esta linha declara uma função chamada ft_is_negative. Ela aceita um argumento, um 
+	inteiro n, e não retorna nenhum valor (void).
 
-    if (n < 0): //Verifica se o valor de n é negativo.
+    Verificação Condicional para Negativo:
+        if (n < 0): Esta linha verifica se o valor de n é menor que zero. Se essa condição for verdadeira, o bloco de 
+	código dentro das chaves será executado.
 
-    write(1, "N", 1);: //Se n for negativo, usa a função write() para enviar o caractere 'N' para o terminal (saída padrão).
+    Escrevendo "N":
+        write(1, "N", 1);: Se n for negativo, esta linha usa a função write() para enviar o caractere 'N'. O 1 indica que 
+	apenas um byte (o caractere 'N') será escrito na saída padrão (descritor de arquivo 1).
 
-    if (n >= 0): //Verifica se o valor de n é zero ou positivo.
+    Verificação Condicional para Não Negativo:
+        if (n >= 0): Esta linha verifica se o valor de n é maior ou igual a zero. Se essa condição for verdadeira, o bloco 
+	de código dentro das chaves será executado.
 
-    write(1, "P", 1);: //Se n for zero ou positivo, usa a função write() para enviar o caractere 'P' para o terminal (saída padrão).
+    Escrevendo "P":
+        write(1, "P", 1);: Se n for não negativo (zero ou positivo), esta linha usa a função write() para enviar o 
+	caractere 'P'. Da mesma forma, o 1 indica que um byte (o caractere 'P') será escrito na saída padrão.
