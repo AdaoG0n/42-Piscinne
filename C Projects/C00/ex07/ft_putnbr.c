@@ -31,65 +31,60 @@ void	ft_putnbr(int nb)
 
 --- Explanation ---
 
-English:
+    Include Directive:
+        Assumes the necessary header file <unistd.h> is included for using the write() function.
 
-    #include <unistd.h>: //Includes the library to use the write() function.
+    Function to Print a Character:
+        void ft_putchar(char c): This function takes a character c as an argument and writes it to the standard output 
+	using the write() function.
+        write(1, &c, 1);: This line sends the character c to file descriptor 1 (standard output, usually the terminal).
 
-    void ft_putchar(char c): //Declares the ft_putchar function, which takes a character as an argument and returns no values (void).
+    Function to Print an Integer:
+        void ft_putnbr(int nb): This function takes an integer nb as an argument and prints it to the standard output.
 
-    write(1, &c, 1);: //Uses the write() function to send the character stored in c to the terminal (standard output).
+    Handling Negative Numbers:
+        if (nb < 0): This checks if nb is negative.
+        ft_putchar('-');: If true, it prints a minus sign to indicate that the number is negative.
+        if (nb == -2147483648): This checks for the minimum integer value in a 32-bit system, which is -2147483648.
+            ft_putchar('2');: Since this number cannot be represented as a positive integer, it prints 2 separately.
+            nb = 147483648;: This modifies nb to 147483648 to allow further processing.
+        else { nb = -nb; }: For other negative numbers, it converts nb to positive by negating it.
 
-    void ft_putnbr(int nb): //Declares the ft_putnbr function, which takes an integer nb as an argument and returns no values (void).
+    Recursive Call for Larger Numbers:
+        if (nb >= 10): This checks if nb has more than one digit.
+        ft_putnbr(nb / 10);: If true, it makes a recursive call with the tens place (i.e., nb divided by 10). 
+	This continues until nb has only one digit left.
 
-    if (nb < 0): //Checks if the number nb is negative.
-
-    ft_putchar('-');: //If nb is negative, prints the minus sign.
-
-    if (nb == -2147483648): //Checks if nb is the minimum value for a 32-bit signed integer.
-
-    ft_putchar('2');: //If nb is -2147483648, prints '2' (the first digit of the positive equivalent).
-
-    nb = 147483648;: //Converts nb to its positive equivalent (the remaining part).
-
-    else: //If nb is not -2147483648.
-
-    nb = -nb;: //Converts nb to its positive equivalent.
-
-    if (nb >= 10): //Checks if nb is greater than or equal to 10.
-
-    ft_putnbr(nb / 10);: //Recursively calls ft_putnbr to print the digits before the last one.
-
-    ft_putchar((nb % 10) + '0');: //Prints the last digit of nb by converting it to a character.
-
-
-
+    Printing the Last Digit:
+        ft_putchar ((nb % 10) + '0');: After reaching a single-digit number, this line converts the last digit to its ASCII 
+	character by taking nb % 10 (which gives the last digit) and adding '0'. It then prints the last digit.
 
 Português:
 
-    #include <unistd.h>: //Inclui a biblioteca para usar a função write().
+    Diretiva de Inclusão:
+        Assume-se que o arquivo de cabeçalho necessário <unistd.h> está incluído para usar a função write().
 
-    void ft_putchar(char c): //Declaração da função ft_putchar, que aceita um caractere como argumento e não retorna valores (void).
+    Função para Imprimir um Caractere:
+        void ft_putchar(char c): Esta função recebe um caractere c como argumento e o escreve na saída padrão usando a 
+	função write().
+        write(1, &c, 1);: Esta linha envia o caractere c para o descritor de arquivo 1 (saída padrão, geralmente o terminal).
 
-    write(1, &c, 1);: //Usa a função write() para enviar o caractere armazenado em c para o terminal (saída padrão).
+    Função para Imprimir um Inteiro:
+        void ft_putnbr(int nb): Esta função recebe um inteiro nb como argumento e o imprime na saída padrão.
 
-    void ft_putnbr(int nb): //Declaração da função ft_putnbr, que aceita um inteiro nb como argumento e não retorna valores (void).
+    Tratamento de Números Negativos:
+        if (nb < 0): Esta condição verifica se nb é negativo.
+        ft_putchar('-');: Se for verdadeiro, imprime um sinal de menos para indicar que o número é negativo.
+        if (nb == -2147483648): Esta condição verifica o valor mínimo de um inteiro em um sistema de 32 bits, que é -2147483648.
+            ft_putchar('2');: Como esse número não pode ser representado como um inteiro positivo, imprime 2 separadamente.
+            nb = 147483648;: Isso modifica nb para 147483648 para permitir um processamento adicional.
+        else { nb = -nb; }: Para outros números negativos, converte nb para positivo negando-o.
 
-    if (nb < 0): //Verifica se o número nb é negativo.
+    Chamada Recursiva para Números Maiores:
+        if (nb >= 10): Esta condição verifica se nb tem mais de um dígito.
+        ft_putnbr(nb / 10);: Se for verdadeiro, faz uma chamada recursiva com a parte das dezenas (ou seja, 
+	nb dividido por 10). Isso continua até que nb tenha apenas um dígito restante.
 
-    ft_putchar('-');: //Se nb for negativo, imprime o sinal de menos.
-
-    if (nb == -2147483648): //Verifica se nb é o valor mínimo para um inteiro com sinal de 32 bits.
-
-    ft_putchar('2');: //Se nb for -2147483648, imprime '2' (o primeiro dígito do equivalente positivo).
-
-    nb = 147483648;: //Converte nb para seu equivalente positivo (a parte restante).
-
-    else: //Se nb não for -2147483648.
-
-    nb = -nb;: //Converte nb para seu equivalente positivo.
-
-    if (nb >= 10): //Verifica se nb é maior ou igual a 10.
-
-    ft_putnbr(nb / 10);: //Chama recursivamente ft_putnbr para imprimir os dígitos antes do último.
-
-    ft_putchar((nb % 10) + '0');: //Imprime o último dígito de nb convertendo-o em um caractere.
+    Imprimindo o Último Dígito:
+        ft_putchar ((nb % 10) + '0');: Após chegar a um número de um único dígito, esta linha converte o último dígito em seu 
+	caractere ASCII tomando nb % 10 (que dá o último dígito) e adicionando '0'. Em seguida, imprime o último dígito.
