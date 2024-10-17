@@ -39,89 +39,103 @@ void	ft_print_comb2(void)
 
 --- Explanation ---
 
-English:
+    Include Directive:
+        Assumes the necessary header file <unistd.h> is included for using the write() function.
 
-    #include <unistd.h>: //Includes the library to use the write() function.
+    Function to Print a Character:
+        void ft_putchar(char c): This function takes a character as an argument and writes it to the standard output 
+	using the write() function.
+        write(1, &c, 1);: This line writes the character c to file descriptor 1, which is the standard output (usually 
+	the terminal).
 
-    void ft_putchar(char c): //Declares the ft_putchar function, which takes a character as an argument and returns no values (void).
+    Function to Print a Number:
+        void ft_print_number(int n): This function takes an integer n as an argument and prints it as two separate 
+	characters (digits) to the standard output.
+        ft_putchar((n / 10) + '0');: This line converts the tens place of the integer to its corresponding ASCII 
+	character and prints it.
+        ft_putchar((n % 10) + '0');: This line converts the units place of the integer to its corresponding ASCII 
+	character and prints it.
 
-    write(1, &c, 1);: //Uses the write() function to send the character stored in c to the terminal (standard output).
+    Function to Print Combinations of Two Numbers:
+        void ft_print_comb2(void): This function does not take any arguments and prints all combinations of two numbers 
+	from 00 to 99.
 
-    void ft_print_number(int n): //Declares the ft_print_number function, which takes an integer n as an argument and returns no values (void).
+    Outer Loop for First Number:
+        int first;: This declares an integer variable first to represent the first number in the combination.
+        first = 0;: This initializes first to 0, the starting point for the combinations.
+        while (first <= 98): This loop continues as long as first is less than or equal to 98. This ensures that second 
+	will have a valid value when calculated.
 
-    ft_putchar((n / 10) + '0');: //Converts the tens digit of n to a character and outputs it.
+    Inner Loop for Second Number:
+        int second;: This declares an integer variable second to represent the second number in the combination.
+        second = first + 1;: This initializes second to be one more than first, ensuring that it is always greater than first.
+        while (second <= 99): This loop continues as long as second is less than or equal to 99, allowing combinations 
+	from 0 to 99.
 
-    ft_putchar((n % 10) + '0');: //Converts the units digit of n to a character and outputs it.
+    Printing the Combination:
+        ft_print_number(first);: This line calls the function ft_print_number to print the current value of first.
+        ft_putchar(' ');: This line prints a space between the two numbers.
+        ft_print_number(second);: This line calls the function ft_print_number to print the current value of second.
 
-    void ft_print_comb2(void): //Declares the ft_print_comb2 function, which takes no arguments and returns no values (void).
+    Conditional Comma and Space:
+        if (first != 98 || second != 99): This condition checks if the current combination is not the last one ("98 99"). 
+	If true, it proceeds to print a comma and space.
+        ft_putchar(',');: This line prints a comma after the combination.
+        ft_putchar(' ');: This line prints a space after the comma.
 
-    int first, second;: //Declares two integer variables first and second to represent pairs of numbers.
+    Incrementing Second Number:
+        second++;: This line increments second to generate the next valid number in the inner loop.
 
-    first = 0;: //Initializes first to 0.
-
-    while (first <= 98): //Starts a loop that continues while first is less than or equal to 98.
-
-    second = first + 1;: //Initializes second to the next number after first.
-
-    while (second <= 99): //Starts a nested loop that continues while second is less than or equal to 99.
-
-    ft_print_number(first);: //Calls the ft_print_number function to print the value of first.
-
-    ft_putchar(' ');: //Prints a space between the two numbers.
-
-    ft_print_number(second);: //Calls the ft_print_number function to print the value of second.
-
-    if (first != 98 || second != 99): //Checks if the current pair is not the last one (98 and 99).
-
-    ft_putchar(',');: //If it's not the last pair, writes a comma after the second number.
-
-    ft_putchar(' ');: //Writes a space after the comma.
-
-    second++;: //Increments second to get the next number.
-
-    first++;: //Increments first to get the next starting number.
-
-
-
+    Incrementing First Number:
+        first++;: After finishing the inner loop, this line increments first to generate the next starting number 
+	for the combination.
 
 Português:
 
-    #include <unistd.h>: //Inclui a biblioteca para usar a função write().
+    Diretiva de Inclusão:
+        Assume-se que o arquivo de cabeçalho necessário <unistd.h> está incluído para usar a função write().
 
-    void ft_putchar(char c): //Declaração da função ft_putchar, que aceita um caractere como argumento e não retorna valores (void).
+    Função para Imprimir um Caractere:
+        void ft_putchar(char c): Esta função recebe um caractere como argumento e o escreve na saída padrão usando a 
+	função write().
+        write(1, &c, 1);: Esta linha escreve o caractere c no descritor de arquivo 1, que é a saída padrão (geralmente o 
+	terminal).
 
-    write(1, &c, 1);: //Usa a função write() para enviar o caractere armazenado em c para o terminal (saída padrão).
+    Função para Imprimir um Número:
+        void ft_print_number(int n): Esta função recebe um inteiro n como argumento e o imprime como dois caracteres (dígitos) 
+	separados na saída padrão.
+        ft_putchar((n / 10) + '0');: Esta linha converte a dezena do inteiro no caractere ASCII correspondente e o imprime.
+        ft_putchar((n % 10) + '0');: Esta linha converte a unidade do inteiro no caractere ASCII correspondente e o imprime.
 
-    void ft_print_number(int n): //Declaração da função ft_print_number, que aceita um inteiro n como argumento e não retorna valores (void).
+    Função para Imprimir Combinações de Dois Números:
+        void ft_print_comb2(void): Esta função não aceita argumentos e imprime todas as combinações de dois números de 00 a 99.
 
-    ft_putchar((n / 10) + '0');: //Converte o dígito das dezenas de n para um caractere e o exibe.
+    Laço Externo para o Primeiro Número:
+        int first;: Declara uma variável inteira first para representar o primeiro número da combinação.
+        first = 0;: Inicializa first como 0, o ponto de partida para as combinações.
+        while (first <= 98): Este loop continua enquanto first for menor ou igual a 98. Isso garante que second terá um 
+	valor válido quando calculado.
 
-    ft_putchar((n % 10) + '0');: //Converte o dígito das unidades de n para um caractere e o exibe.
+    Laço Interno para o Segundo Número:
+        int second;: Declara uma variável inteira second para representar o segundo número da combinação.
+        second = first + 1;: Inicializa second como um a mais que first, garantindo que seja sempre maior que first.
+        while (second <= 99): Este loop continua enquanto second for menor ou igual a 99, permitindo combinações de 0 a 99.
 
-    void ft_print_comb2(void): //Declaração da função ft_print_comb2, que não recebe argumentos e não retorna valores (void).
+    Imprimindo a Combinação:
+        ft_print_number(first);: Esta linha chama a função ft_print_number para imprimir o valor atual de first.
+        ft_putchar(' ');: Esta linha imprime um espaço entre os dois números.
+        ft_print_number(second);: Esta linha chama a função ft_print_number para imprimir o valor atual de second.
 
-    int first, second;: //Declara duas variáveis inteiras first e second para representar pares de números.
+    Vírgula e Espaço Condicional:
+        if (first != 98 || second != 99): Esta condição verifica se a combinação atual não é a última ("98 99"). 
+	Se verdadeira, prossegue para imprimir uma vírgula e um espaço.
+        ft_putchar(',');: Esta linha imprime uma vírgula após a combinação.
+        ft_putchar(' ');: Esta linha imprime um espaço após a vírgula.
 
-    first = 0;: //Inicializa first com 0.
+    Incrementando o Segundo Número:
+        second++;: Esta linha incrementa second para gerar o próximo número válido no loop interno.
 
-    while (first <= 98): //Inicia um loop que continua enquanto first for menor ou igual a 98.
+    Incrementando o Primeiro Número:
+        first++;: Após terminar o loop interno, esta linha incrementa first para gerar o próximo número inicial para a 
+	combinação.
 
-    second = first + 1;: //Inicializa second com o próximo número após first.
-
-    while (second <= 99): //Inicia um loop aninhado que continua enquanto second for menor ou igual a 99.
-
-    ft_print_number(first);: //Chama a função ft_print_number para imprimir o valor de first.
-
-    ft_putchar(' ');: //Imprime um espaço entre os dois números.
-
-    ft_print_number(second);: //Chama a função ft_print_number para imprimir o valor de second.
-
-    if (first != 98 || second != 99): //Verifica se o par atual não é o último (98 e 99).
-
-    ft_putchar(',');: //Se não for o último par, escreve uma vírgula após o segundo número.
-
-    ft_putchar(' ');: //Escreve um espaço após a vírgula.
-
-    second++;: //Incrementa second para obter o próximo número.
-
-    first++;: //Incrementa first para obter o próximo número inicial.
