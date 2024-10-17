@@ -16,10 +16,6 @@ void	ft_is_negative(int n)
 
 --- Explanation ---
 
-    Include Directive:
-        Although not explicitly included here, it's typically assumed that the required headers such as <unistd.h> are 
-	included in a complete program. This header is necessary for using the write() function.
-
     Function Declaration:
         void ft_is_negative(int n): This line declares a function named ft_is_negative. It takes one argument, 
 	an integer n, and does not return any value (void).
@@ -44,10 +40,6 @@ void	ft_is_negative(int n)
 
 
 Português:
-
-    Diretiva de Inclusão:
-        Embora não esteja explicitamente incluída aqui, normalmente se assume que os cabeçalhos necessários, como <unistd.h>, 
-	estão incluídos em um programa completo. Este cabeçalho é necessário para usar a função write().
 
     Declaração da Função:
         void ft_is_negative(int n): Esta linha declara uma função chamada ft_is_negative. Ela aceita um argumento, um 
