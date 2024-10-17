@@ -5,7 +5,8 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-/*
+/* --- explanation ---
+
 #include <unistd.h>: Includes the necessary library to use the write() function.
 	
 void ft_putchar(char c): Declaration of the ft_putchar function, which accepts a character 
