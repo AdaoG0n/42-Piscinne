@@ -11,7 +11,7 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-
+_______________________________________________________________________________________________
 Explanation
 
 Function Declaration:
