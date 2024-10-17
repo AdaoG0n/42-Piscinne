@@ -16,35 +16,63 @@ void	ft_print_numbers(void)
 
 --- Explanation ---
 
-English:
+    Include Directive:
+        #include <unistd.h>: This line includes the <unistd.h> header file, which is necessary for using the write() function. 
+	This function allows the program to write data to file descriptors, including standard output.
 
-    #include <unistd.h>: //Includes the library to use the write() function.
+    Function Declaration:
+        void ft_print_numbers(void): This line declares a function named ft_print_numbers. The function does not take any 
+	arguments and does not return any value (void).
 
-    void ft_print_numbers(void): //Declares the ft_print_numbers function, which takes no arguments and returns no values (void).
+    Variable Declaration:
+        int count;: This line declares an integer variable named count. This variable will be used to control the loop 
+	and represent the ASCII values of the digits.
 
-    int count;: //Declares a variable count to store the ASCII value of the current digit.
+    Initializing Count:
+        count = 48;: This line initializes the variable count with the value 48, which corresponds to the ASCII value 
+	of the character '0'.
 
-    count = 48;: //Initializes count with the value 48, which corresponds to the character '0'.
+    While Loop:
+        while (count <= 57): This line starts a loop that continues as long as count is less than or equal to 57. 
+	The value 57 corresponds to the ASCII value of the character '9'.
 
-    while (count <= 57): //Starts a loop that continues while count is less than or equal to 57 (which corresponds to '9').
+    Writing the Character:
+        write(1, &count, 1);: Inside the loop, this line uses the write() function to output the current value of count. 
+	The count variable is being treated as an ASCII character. Thus, when count is 48, it writes '0', when count is 49, 
+	it writes '1', and so on, up to 57, which writes '9'.
 
-    write(1, &count, 1);: //Uses the write() function to send the current character stored in count to the terminal (standard output).
+    Incrementing Count:
+        count++;: This line increments the value of count to move to the next digit. 
+	It effectively changes count from 48 to 49, then to 50, and so forth, until it reaches 57.
 
-    count++;: //Increments count to move to the next digit.
 
 
+	
 Português:
 
-    #include <unistd.h>: //Inclui a biblioteca para usar a função write().
+    Diretiva de Inclusão:
+        #include <unistd.h>: Esta linha inclui o arquivo de cabeçalho <unistd.h>, que é necessário para usar a função write(). 
+	Esta função permite que o programa escreva dados em descritores de arquivos, incluindo a saída padrão.
 
-    void ft_print_numbers(void): //Declaração da função ft_print_numbers, que não recebe argumentos e não retorna valores (void).
+    Declaração da Função:
+        void ft_print_numbers(void): Esta linha declara uma função chamada ft_print_numbers. A função não aceita argumentos e 
+	não retorna nenhum valor (void).
 
-    int count;: //Declara uma variável count para armazenar o valor ASCII do dígito atual.
+    Declaração da Variável:
+        int count;: Esta linha declara uma variável inteira chamada count. Esta variável será usada para controlar o loop e 
+	representar os valores ASCII dos dígitos.
 
-    count = 48;: //Inicializa count com o valor 48, que corresponde ao caractere '0'.
+    Inicializando Count:
+        count = 48;: Esta linha inicializa a variável count com o valor 48, que corresponde ao valor ASCII do caractere '0'.
 
-    while (count <= 57): //Inicia um loop que continua enquanto count for menor ou igual a 57 (correspondente a '9').
+    Laço While:
+        while (count <= 57): Esta linha inicia um loop que continua enquanto count for menor ou igual a 57. O valor 57 
+	corresponde ao valor ASCII do caractere '9'.
 
-    write(1, &count, 1);: //Usa a função write() para enviar o caractere atual armazenado em count para o terminal (saída padrão).
+    Escrevendo o Caractere:
+        write(1, &count, 1);: Dentro do loop, esta linha usa a função write() para enviar o valor atual de count. 
+	A variável count está sendo tratada como um caractere ASCII. Assim, quando count é 48, ele escreve '0', quando count é 49, ele escreve '1', e assim por diante, até 57, que escreve '9'.
 
-    count++;: //Incrementa count para passar para o próximo dígito.
+    Incrementando Count:
+        count++;: Esta linha incrementa o valor de count para passar para o próximo dígito. 
+	Ela efetivamente altera count de 48 para 49, depois para 50, e assim por diante, até alcançar 57.
